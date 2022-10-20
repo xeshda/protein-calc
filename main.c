@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int weight;
-char measurement;
-char goals;
-double total = 0.00, kg = 1.0;
+int weight, total, amount;
+char measurement, goals;
+double kg = 1.0;
 
 int main(){
 
@@ -36,7 +35,36 @@ int main(){
 
     total = weight * kg; 
 
-    printf("\nYou require %.2lf grams of daily protein intake.\n", total);
+    printf("\nYou require %d grams of daily protein intake.\n", total);
+
+    printf("Recommended ingredients: \n");
+
+    amount = total / 41;
+    printf("%d Cod Fillet (41g)\n", amount);
+    total %= 41;
+
+    amount = total / 31;
+    printf("%d Salmon Fillet (31g)\n", amount);
+    total %= 31;
+
+    amount = total / 27;
+    printf("%d Chicken Breast (27g)\n", amount);
+    total %= 27;
+
+    amount = total / 8;
+    printf("%d Dairy Milk (8g)\n", amount);
+    total %= 8;
+
+    amount = total / 7;
+    printf("%d Peanuts/Peanut Butter (7g)\n", amount);
+    total %= 7;
+
+    amount = total / 6;
+    printf("%d Eggs (6g)\n", amount);
+    total %= 6;
+
+    amount = total / 6;
+    printf("%d Almonds (6g)\n", amount);
 
     return 0;
 }
